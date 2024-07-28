@@ -13,10 +13,15 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   //collect human input for rock paper scissors choice
-  let choice = prompt(`Rock, Paper, or Scissors?`);
+  let choice = prompt(`Rock, Paper, or Scissors?`).toLowerCase();
   return console.log(choice);
 }
 
+//Main
+let humanChoice = null;
+let compChoice = null;
+
 console.log(`Rock, Paper, Scissors. Let's begin!`);
-getHumanChoice();
-console.log('Computer choice:', getComputerChoice());
+humanChoice = getHumanChoice();
+compChoice = getComputerChoice();
+console.log('Computer choice:', compChoice);
