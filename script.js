@@ -28,8 +28,6 @@ function getHumanChoice() {
 }
 
 function playRound (humanChoice, compChoice) {
-  humanChoice = getHumanChoice();
-  compChoice = getComputerChoice();
   console.log('Human choice:', humanChoice);
   console.log('Computer choice:', compChoice);
 
@@ -71,14 +69,16 @@ function playRound (humanChoice, compChoice) {
 }
 
 function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
+  let humanChoice = null;
+  let compChoice = null;
 
   console.log(`Rock, Paper, Scissors. Let's begin!`);
   console.log(`Human: ${humanScore}, Computer: ${computerScore}`);
 
   for (let i = 1; i <= 5; i++) {
     console.log(`Round: ${i}`)
+    humanChoice = getHumanChoice();
+    compChoice = getComputerChoice();
     playRound(humanChoice, compChoice);
     console.log(`Human: ${humanScore}, Computer: ${computerScore}`);
   }
@@ -92,4 +92,6 @@ function playGame() {
 }
 
 //main
+let humanScore = 0;
+let computerScore = 0;
 playGame();
